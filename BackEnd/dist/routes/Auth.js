@@ -1,0 +1,26 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const authCheckAccount_1 = __importDefault(require("../controllers/authCheckAccount"));
+const login_1 = __importDefault(require("../controllers/login"));
+const logout_1 = __importDefault(require("../controllers/logout"));
+const register_1 = __importDefault(require("../controllers/register"));
+const reset_password_1 = __importDefault(require("../controllers/reset_password"));
+const reset_request_1 = __importDefault(require("../controllers/reset_request"));
+const reset_sucess_1 = __importDefault(require("../controllers/reset_sucess"));
+const verify_resetter_1 = __importDefault(require("../controllers/verify_resetter"));
+const RefreshToken_1 = __importDefault(require("../middleWares/RefreshToken"));
+const VerifyToken_1 = __importDefault(require("../middleWares/VerifyToken"));
+const Auth = express_1.default.Router();
+Auth.post('/login', login_1.default);
+Auth.post('/register', register_1.default);
+Auth.get('/logout/:id', logout_1.default);
+Auth.post('/reset_request', reset_request_1.default);
+Auth.post('/reset_password/:token', reset_password_1.default);
+Auth.get('/reset_password/:token', verify_resetter_1.default);
+Auth.get('/reset_success/:id', reset_sucess_1.default);
+Auth.get('/verify_account_redirect', VerifyToken_1.default, RefreshToken_1.default, authCheckAccount_1.default);
+exports.default = Auth;

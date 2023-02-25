@@ -1,0 +1,691 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+}
+
+button {
+  outline: none;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+}
+button:disabled {
+  cursor: not-allowed;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+input {
+  outline: none;
+  border: none;
+  font-size: 1rem;
+}
+
+.container {
+  max-width: 90vw;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.icon {
+  display: inline-block;
+  font-size: 1rem;
+  vertical-align: middle;
+}
+
+.green-btn {
+  background-color: #01d28e;
+  color: white;
+}
+.green-btn:hover {
+  background-color: #01a36d;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid rgb(124, 124, 124);
+}
+
+td {
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 5px 2px;
+}
+
+.error-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+}
+.error-page .errorContainer {
+  width: 400px;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.auth {
+  min-height: 100vh;
+  max-width: 100vw;
+  display: flex;
+  align-items: center;
+  background-color: #e7e7e7;
+  padding: 2rem 0;
+}
+.auth .container {
+  width: 400px;
+  margin: 0 auto;
+  padding: 2rem 2rem 3.5rem 2rem;
+  background-color: white;
+  box-shadow: 1px 1px 5px gray;
+  border-radius: 5px;
+}
+.auth .confirm-password-reset-messsage {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+  padding: 1rem;
+  background-color: rgb(238, 238, 238);
+}
+.auth .confirm-password-reset-messsage span {
+  color: #01d28e;
+}
+.auth .top-content .confirmed-account {
+  padding: 3.5px;
+  position: relative;
+  font-size: 11px;
+  border: 1px solid rgb(224, 224, 224);
+  border-radius: 1rem;
+  margin-top: 10px;
+}
+.auth .top-content .confirmed-account div {
+  display: flex;
+  align-items: center;
+}
+.auth .top-content .confirmed-account .user-icon {
+  width: 25px;
+  height: 25px;
+  border: 1px solid #01d28e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-right: 5px;
+  color: gray;
+}
+.auth .top-content .confirmed-account .check {
+  color: #01d28e;
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.auth .top-content .welcome-note {
+  text-align: center;
+  font-size: 1.8rem;
+  font-family: "Lato", sans-serif;
+}
+.auth .top-content .auth-desc {
+  text-align: center;
+  font-size: 0.9rem;
+  margin: 10px 0;
+}
+.auth .top-content .brand-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.auth .error-message {
+  text-align: center;
+  color: rgb(255, 52, 52);
+  background-color: rgb(230, 230, 230);
+  margin-bottom: 5px;
+  padding: 5px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 2rem;
+  visibility: hidden;
+}
+.auth .error-message.show-error {
+  visibility: visible;
+}
+.auth form {
+  margin-bottom: 1rem;
+}
+.auth form input {
+  font-size: 1rem;
+}
+.auth form .input-wrapper {
+  position: relative;
+  margin-bottom: 20px;
+}
+.auth form .input-wrapper > .icon {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  color: rgb(73, 73, 73);
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.auth form .input-wrapper > .icon:hover {
+  color: rgb(46, 46, 46);
+}
+.auth form .input-wrapper input {
+  width: 100%;
+  padding: 1rem;
+  border: 1.5px solid grey;
+  border-radius: 10px;
+}
+.auth form .input-wrapper input:hover {
+  border-color: #01d28e;
+}
+.auth form .input-wrapper input:focus {
+  border-color: #01d28e;
+}
+.auth form .submit-btn {
+  width: 100%;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  padding: 10px;
+}
+.auth .auth-footer .remember-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #01d28e;
+  margin-bottom: 10px;
+}
+.auth .auth-footer .remember-flex .remember-me label {
+  position: relative;
+  padding-left: 30px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.auth .auth-footer .remember-flex .remember-me label input {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  transform: translateY(-50%);
+}
+.auth .auth-footer .remember-flex .remember-me label input:checked {
+  accent-color: #01d28e;
+}
+.auth .auth-footer .remember-flex .remember-me label input:checked ~ .checkbox-background {
+  background-color: transparent;
+}
+.auth .auth-footer .remember-flex .remember-me label .checkbox-background {
+  background-color: rgb(182, 182, 182);
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+.auth .auth-footer .remember-flex .remember-me label:hover .checkbox-background {
+  background-color: rgb(150, 150, 150);
+}
+.auth .auth-footer .remember-flex a {
+  color: rgb(88, 88, 88);
+  font-size: 14px;
+  text-decoration: underline;
+}
+.auth .auth-footer .remember-flex a:hover {
+  color: rgb(51, 51, 51);
+  text-decoration: none;
+}
+.auth .auth-footer .reverse-page-question {
+  font-size: 14px;
+  text-align: center;
+}
+.auth .auth-footer .reverse-page-link {
+  display: flex;
+  justify-content: center;
+}
+.auth .auth-footer .reverse-page-link a {
+  color: #01d28e;
+}
+
+.body {
+  padding: 4.5rem 0;
+  min-height: 100vh;
+}
+.body .view {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  margin-bottom: 1.5rem;
+}
+.body .view span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+.body .active-page {
+  font-size: 2rem;
+}
+.body .page-view {
+  color: #01d28e;
+  opacity: 0.4;
+  font-size: 5rem;
+  letter-spacing: 0.7rem;
+}
+.body table {
+  width: 100%;
+}
+.body table td:first-child {
+  width: 2.5rem;
+}
+.body table td:nth-child(2) {
+  width: 15rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.body table .send-file-link,
+.body table .downloads,
+.body table .email {
+  width: 120px;
+}
+.body table .btn,
+.body table .send-file-link a {
+  display: inline-block;
+  padding: 3px;
+  font-size: 1rem;
+  width: 90%;
+  height: 100%;
+}
+.body table .send-file-link a {
+  background-color: rgb(43, 124, 245);
+  color: white;
+}
+.body table .send-file-link a:hover {
+  background-color: rgb(25, 113, 245);
+}
+.body .table-foot {
+  display: flex;
+  justify-content: flex-end;
+  padding: 2px 5px;
+  font-size: 1rem;
+  background-color: rgb(226, 226, 226);
+  border-bottom: 1px solid rgb(124, 124, 124);
+  border-left: 1px solid rgb(124, 124, 124);
+  border-right: 1px solid rgb(124, 124, 124);
+}
+.body .table-foot .total {
+  font-weight: 700;
+  margin-right: 5px;
+}
+
+.send-mail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 20;
+}
+.send-mail > div:first-child {
+  box-shadow: 1px 1px 10px #9c9c9c;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  z-index: 40;
+}
+.send-mail .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.719);
+  width: 100vw;
+  height: 100vh;
+  padding: 2rem;
+  z-index: 30;
+}
+.send-mail .file-preview {
+  width: 200px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.send-mail .file-preview img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.send-mail .file-preview div {
+  width: 100%;
+  height: 100%;
+  border: 3px dashed #01d28e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.send-mail .file-preview div span {
+  font-size: 100px;
+  color: #01d28e;
+}
+.send-mail .mail-content {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 2rem;
+  width: 600px;
+  box-shadow: 1px 1px 10px grey;
+}
+.send-mail label {
+  color: rgb(47, 0, 255);
+}
+.send-mail .textarea {
+  background-color: #e7e7e7;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+.send-mail .textarea textarea {
+  border: none;
+  resize: none;
+  outline: none;
+  background-color: transparent;
+}
+.send-mail .textarea textarea:focus {
+  background-color: white;
+}
+.send-mail .button-group {
+  margin-top: 12px;
+}
+.send-mail .btn {
+  color: white;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+.send-mail .close-btn {
+  background-color: rgb(248, 29, 29);
+  margin-right: 10px;
+}
+.send-mail .close-btn:hover {
+  background-color: rgb(245, 8, 8);
+}
+.send-mail .send-mail-btn {
+  background-color: #1a1a1a;
+  width: 60px;
+}
+.send-mail .send-mail-btn:hover {
+  background-color: #0a0a0a;
+}
+
+.admin .downloads a {
+  font-weight: 700;
+  color: #01d28e;
+  font-size: 1rem;
+}
+.admin .downloads a:hover {
+  color: #01a36d;
+}
+.admin .email a {
+  font-weight: 700;
+  color: rgb(43, 124, 245);
+  font-size: 1rem;
+}
+.admin .email a:hover {
+  color: rgb(2, 77, 189);
+}
+.admin .upload-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.admin .upload-content form {
+  padding: 2rem 3rem;
+  background-color: #eeeeee;
+  width: 500px;
+}
+.admin .upload-content form .file-select {
+  width: 100%;
+  border: 2px dashed #01d28e;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 10px;
+  margin-bottom: 5px;
+}
+.admin .upload-content form .file-select .file-upload-info {
+  text-align: center;
+}
+.admin .upload-content form .file-select .file-upload-info .icon {
+  font-size: 4rem;
+  height: 4rem;
+  color: #01d28e;
+  margin-bottom: 1rem;
+}
+.admin .upload-content form .file-select .file-upload-info p {
+  color: #01d28e;
+  line-height: 0;
+}
+.admin .upload-content form .file-select .file-upload-info small {
+  font-size: 10px;
+  color: #585858;
+}
+.admin .upload-content form #file {
+  color: transparent;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.admin .upload-content form #file::-webkit-file-upload-button {
+  cursor: pointer;
+}
+.admin .upload-content form #title {
+  padding: 2px 10px;
+  width: 70%;
+}
+.admin .upload-content form .input-wrapper {
+  margin-bottom: 10px;
+}
+.admin .upload-content form .textarea {
+  padding: 10px;
+  background-color: white;
+}
+.admin .upload-content form .textarea textarea {
+  width: 100%;
+  border: none;
+  resize: none;
+  outline: none;
+}
+.admin .upload-content form .file-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.admin .upload-content form .file-flex select {
+  padding: 3px 4px;
+  width: 150px;
+  outline: none;
+}
+.admin .upload-content form .submit-btn {
+  width: 64px;
+  padding: 3px 8px;
+}
+
+.list {
+  width: 600px;
+  background-color: #f0f0f0;
+}
+.list h2 {
+  text-align: center;
+  line-height: 1rem;
+  font-size: 1.3rem;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #01d28e;
+}
+.list > div {
+  padding: 1rem 2rem 2rem 2rem;
+}
+.list .file-detail {
+  margin-bottom: 13px;
+  border: none;
+}
+.list .file-detail th {
+  vertical-align: top;
+}
+.list .file-detail th, .list .file-detail td {
+  text-align: left;
+  border: none;
+}
+.list table {
+  width: 100%;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 1px 1px 5px grey;
+  padding: 5px 0;
+  background-color: white;
+  z-index: 10;
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+header nav > h1 {
+  color: #01d28e;
+}
+header .identify-account {
+  display: flex;
+  align-items: center;
+}
+header .identify-account .avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgb(194, 194, 194);
+  margin-right: 10px;
+}
+header .identify-account .greet-note {
+  color: #01d28e;
+  text-transform: capitalize;
+}
+header .identify-account .account {
+  position: relative;
+  margin-left: 8px;
+}
+header .identify-account .account > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  width: 110px;
+}
+header .identify-account .account .account-name {
+  text-transform: capitalize;
+}
+header .identify-account .account .drop-down-menu {
+  position: absolute;
+  left: 0;
+  top: 120%;
+  width: 100%;
+  padding: 2px 0;
+  background-color: white;
+  box-shadow: 1px 1px 5px rgb(145, 145, 145);
+}
+header .identify-account .account .drop-down-menu div {
+  font-size: 14px;
+  padding: 0 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .identify-account .account .drop-down-menu div:hover {
+  background-color: #01d28e;
+  color: white;
+}
+header .nav-serach-bar {
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  position: relative;
+}
+header .nav-serach-bar .icon {
+  font-size: 1.3rem;
+  color: #666666;
+}
+header .nav-serach-bar input {
+  padding: 5px 30px 5px 30px;
+  border-radius: 20px;
+  border: 1px solid #666666;
+}
+header .nav-serach-bar input:focus {
+  border: 1px solid #01d28e;
+}
+header .nav-serach-bar .icon {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+header .nav-serach-bar .search-icon {
+  left: 8px;
+}
+header .nav-serach-bar .close-time-icon {
+  right: 8px;
+  cursor: pointer;
+}
+header .nav-menu {
+  display: flex;
+}
+header .nav-menu .nav-item {
+  margin-right: 12px;
+}
+header .nav-menu .nav-item a {
+  color: #303030;
+}
+header .nav-menu .nav-item a:hover {
+  color: #01d28e;
+}
+header .nav-menu .nav-item a.active {
+  color: #01d28e;
+}/*# sourceMappingURL=index.css.map */
