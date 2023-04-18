@@ -44,6 +44,7 @@ const Register = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         if (!(0, EmailValidation_1.default)(email))
             return res.status(400).json({ status: 'error', message: 'Invalid email' });
         console.log('Email verified');
+        // All input verified
         const foundUser = yield (0, DB_1.default)('SELECT * FROM users WHERE email= $1', [email]);
         if (foundUser.rows.length != 0)
             return res.status(403).json({ status: 'error', message: 'Account already exist...' });
